@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": null,
+    "database": "chirper_development",
+    "host": "127.0.0.1",
+    "dialect": "postgresql",
+    "logging": false,
+    "allow_origin": "http://localhost:4200"
+  },
+  "test": {
+    "username": "postgres",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "postgresql",
+    "allow_origin": "http://localhost:4200"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "allow_origin": "http://example.com"
+  }
+}
