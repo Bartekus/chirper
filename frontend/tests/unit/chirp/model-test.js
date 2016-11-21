@@ -16,10 +16,10 @@ test('it exists', function(assert) {
 
 test('user relationship', function(assert) {
   // Get the chirp model
-  var Chirp = this.store().modelFor('chirp');
+  let Chirp = this.store().modelFor('chirp');
 
   // Get its 'user'-key
-  var relationship = get(Chirp, 'relationshipsByName').get('user');
+  let relationship = get(Chirp, 'relationshipsByName').get('user');
 
   // Make sure that the relationship works as expected
   assert.equal(relationship.key, 'user');

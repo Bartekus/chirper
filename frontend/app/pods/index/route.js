@@ -1,6 +1,8 @@
 import Ember from 'ember';
 import UnauthenticatedRouteMixin from 'ember-simple-auth/mixins/unauthenticated-route-mixin';
 
-export default Ember.Route.extend(UnauthenticatedRouteMixin, {
-  classNames: ["landing-page"]
+const { Route } = Ember;
+
+export default Route.extend(UnauthenticatedRouteMixin, {
+  classNames: ['landing-page']
 });

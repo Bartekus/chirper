@@ -1,12 +1,14 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
-  model: function(params, transition) {
-    var username = transition.params.user.username;
+const { Route, RSVP } = Ember;
+
+export default Route.extend({
+  model(params, transition) {
+    let [username] = transition.params.user.username;
     // console.log('transition', transition);
     // console.log('params', params);
 
-    return Ember.RSVP.hash({
+    return RSVP.hash({
       users: this.store.query('user', { followee: username })
     });
   }

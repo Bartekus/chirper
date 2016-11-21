@@ -1,8 +1,10 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
+const { Component, computed } = Ember;
+
+export default Component.extend({
   tagName: 'ul',
   classNames: ['card'],
   chirpsSorting: ['createdAt:desc'],
-  sortedChirps: Ember.computed.sort('chirps', 'chirpsSorting')
+  sortedChirps: computed.sort('chirps', 'chirpsSorting')
 });

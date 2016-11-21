@@ -18,7 +18,7 @@ test('it renders', function(assert) {
 });
 
 test('long text makes label red', function(assert) {
-  var longText = 'Lorem ipsum dolor sit amet, eam ex cibo elitr tamquam. Nusquam adipiscing ea sea, habemus minimum vis cu. Pri ponderum percipitur ex, eu mei tamquam eloquentiam. Ius apeirian insolens ea.';
+  let longText = 'Lorem ipsum dolor sit amet, eam ex cibo elitr tamquam. Nusquam adipiscing ea sea, habemus minimum vis cu. Pri ponderum percipitur ex, eu mei tamquam eloquentiam. Ius apeirian insolens ea.';
 
   this.set('chirpText', longText);
   this.render(hbs`{{compose-modal chirpText=chirpText}}`);

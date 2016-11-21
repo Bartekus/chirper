@@ -1,15 +1,17 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-  application: Ember.inject.controller(),
-  session: Ember.inject.service(),
-  sessionAccount: Ember.inject.service('session-account'),
+const { Controller, inject } = Ember;
+
+export default Controller.extend({
+  application: inject.controller(),
+  session: inject.service(),
+  sessionAccount: inject.service('session-account'),
 
   actions: {
-    openComposeModal: function() {
+    openComposeModal() {
       this.get('application').send('toggleComposeModal');
     },
-    logout: function() {
+    logout() {
       this.get('session').invalidate();
       this.transitionToRoute('index');
     }

@@ -1,4 +1,4 @@
-export default function(){
+export default function() {
   this.transition(
     this.fromRoute('user.index'),
     this.toRoute('user.following'),
@@ -7,11 +7,11 @@ export default function(){
   );
 
   this.transition(
-  this.fromRoute('home'),
-  this.toRoute('user'),
-  this.useAndReverse('explode', {
-    matchBy: 'data-profile-image',
-    use: 'fly-to'
-  })
+    this.fromRoute('home'),
+    this.toRoute('user'),
+    this.useAndReverse('explode', {
+      matchBy: 'data-profile-image',
+      use: 'fly-to'
+    })
   );
 }

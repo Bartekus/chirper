@@ -2,13 +2,15 @@ import Ember from 'ember';
 import { module, test } from 'qunit';
 import startApp from 'chirper/tests/helpers/start-app';
 
+const { run } = Ember;
+
 module('Acceptance | user can log in', {
-  beforeEach: function() {
+  beforeEach() {
     this.application = startApp();
   },
 
-  afterEach: function() {
-    Ember.run(this.application, 'destroy');
+  afterEach() {
+    run(this.application, 'destroy');
   }
 });
 
@@ -25,7 +27,6 @@ test('User can log in', function(assert) {
     assert.equal(currentRouteName(), 'home');
   });
 });
-
 
 // Sad path
 test('Wrong credentials shows error box', function(assert) {

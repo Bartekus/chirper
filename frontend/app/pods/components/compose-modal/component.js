@@ -1,40 +1,41 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
+const { Component, computed, inject, on, run } = Ember;
 
-  store: Ember.inject.service(),
+export default Component.extend({
+  store: inject.service(),
 
   chirpText: '',
 
-  remainingChars: Ember.computed('chirpText', function() {
+  remainingChars: computed('chirpText', function() {
     return 140 - this.get('chirpText').length;
   }),
 
-  noCharsLeft: Ember.computed('remainingChars', function() {
+  noCharsLeft: computed('remainingChars', function() {
     return (this.get('remainingChars') < 0);
   }),
 
-  focusOnTextarea: Ember.on('didInsertElement', function() {
-    Ember.run.scheduleOnce('afterRender', () => {
+  focusOnTextarea: on('didInsertElement', function() {
+    run.scheduleOnce('afterRender', () => {
       this.$().find('textarea').focus();
     });
   }),
 
   actions: {
-    postChirp: function() {
+    postChirp() {
       if (this.get('noCharsLeft')) {
-        swal("Woops!", "You have too many characters in your chirp!", "error");
+        swal('Woops!', 'You have too many characters in your chirp!', 'error');
         return false;
       }
 
-      var text = this.get('chirpText');
+      let text = this.get('chirpText');
 
-      var chirpData = {
-        text: text,
+      let chirpData = {
+        text,
         createdAt: new Date()
       };
 
-      var newChirp = this.get('store').createRecord('chirp', chirpData);
+      let newChirp = this.get('store').createRecord('chirp', chirpData);
 
       newChirp.save().then(() => {
         this.attrs.dismiss();

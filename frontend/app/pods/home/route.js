@@ -1,9 +1,11 @@
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-export default Ember.Route.extend(AuthenticatedRouteMixin, {
+const { Route, RSVP } = Ember;
+
+export default Route.extend(AuthenticatedRouteMixin, {
   model() {
-    return Ember.RSVP.hash({
+    return RSVP.hash({
       chirps: this.store.findAll('chirp')
     });
   }

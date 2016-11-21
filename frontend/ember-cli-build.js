@@ -1,10 +1,27 @@
 /*jshint node:true*/
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+// var nodeSass = require('node-sass');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    // sassOptions: {
+    //   nodeSass: nodeSass
+    // },
+    // sourcemaps: {
+    //   enabled: true,
+    //   extensions: ['js']
+    // },
+    // minifyCSS: {
+    //   options: {
+    //     processImport: false
+    //   }
+    // },
+    // emberHighCharts: {
+    //   includeHighCharts: false,
+    //   includeHighStock: true,
+    //   includeHighChartsMore: true
+    // }
   });
 
   // Use `app.import` to add additional libraries to the generated
