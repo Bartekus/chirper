@@ -1,13 +1,14 @@
 /*jshint node:true*/
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-// var nodeSass = require('node-sass');
+var nodeSass = require('node-sass');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // sassOptions: {
-    //   nodeSass: nodeSass
-    // },
+    sassOptions: {
+      nodeSass: nodeSass,
+      sourceMap: true
+    },
     // sourcemaps: {
     //   enabled: true,
     //   extensions: ['js']
