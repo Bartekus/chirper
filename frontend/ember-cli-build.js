@@ -9,10 +9,10 @@ module.exports = function(defaults) {
       nodeSass: nodeSass,
       sourceMap: true
     },
-    // sourcemaps: {
-    //   enabled: true,
-    //   extensions: ['js']
-    // },
+    sourcemaps: {
+      enabled: true,
+      extensions: ['js']
+    }
     // minifyCSS: {
     //   options: {
     //     processImport: false
